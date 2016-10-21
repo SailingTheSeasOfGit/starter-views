@@ -8,7 +8,7 @@ employees lasting more than three months. (Though it is unlikely)
 - dishwasher
 - cashier
 - gravy stirrer
-####- fry quality inspect (2 years + experience)
+####- fry quality inspector (2 years + experience)
 - cheese curd manager
 
 Please drop off a resume if you are interested in applying for a job. Resumes
