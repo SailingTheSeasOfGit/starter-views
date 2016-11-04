@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |  $autoload['packages'] = array(APPPATH.'third_party', '/usr/local/shared');
 |
 */
-$autoload['packages'] = array();
+$autoload['packages'] = array(APPPATH . 'third_party/caboose/');
 
 /*
 | -------------------------------------------------------------------
@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('parser','database','parsedown');
+$autoload['libraries'] = array('parser','database','parsedown', 'session', 'caboose');
 
 /*
 | -------------------------------------------------------------------
