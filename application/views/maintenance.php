@@ -1,4 +1,3 @@
-
 <table class='table'>
          <tr>
           <th>Id</th>
@@ -13,3 +12,4 @@
         </tr>
         {/items}
 </table>
+<a class="btn btn-default" role="button" href="/crud/add">Add a new menu item</a>
