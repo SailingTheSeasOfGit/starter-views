@@ -18,6 +18,7 @@
 --
 -- Table structure for table `categories`
 --
+use views;
 
 DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
