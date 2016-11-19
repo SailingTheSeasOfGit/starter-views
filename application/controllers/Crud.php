@@ -12,7 +12,7 @@ class Crud extends Application {
         $role = $this->session->userdata('userrole');
         if ($role == 'user'){
             $message = "You are a user not an admin";
-            $this->data[' content'] = $message;
+            $this->data['content'] = $message;
             $this->render('template');
             return;
         }
@@ -82,7 +82,7 @@ class Crud extends Application {
             if($record->picture != null)
                 $_POST['picture'];
         }
-        
+
         $this->session->set_userdata('record', $record);
 
         $this->load->library('form_validation');
@@ -120,7 +120,7 @@ class Crud extends Application {
     function delete(){
         $key = $this->session->userdata('key');
         $record = $this->session->userdata('record');
-        
+
         if(!empty($record)){
             $this->menu->delete($key);
             $this->session->unset_userdata('key');
@@ -137,7 +137,7 @@ class Crud extends Application {
         $this->session->set_userdata('record', $record);
         $this->edit();
     }
-    
+
     function show_any_errors(){
         $result = '';
         if(empty($this->error_messages)){
@@ -151,25 +151,25 @@ class Crud extends Application {
         $this->data['error_messages'] = $this->parser->parse('maintenance-error', ['error_messages' => $result], true);
 
     }
-    
-    function replace_picture() {    
-        $config = [        
+
+    function replace_picture() {
+        $config = [
             'upload_path' => './images', // relative to front controller
-            'allowed_types' => 'gif|jpg|jpeg|png',        
+            'allowed_types' => 'gif|jpg|jpeg|png',
             'max_size' => 100, // 100KB should be enough for our graphical menu
-            'max_width' => 256,        
+            'max_width' => 256,
             'max_height' => 256, // actually, we want exactly 256x256
-            'min_width' => 256,        
+            'min_width' => 256,
             'min_height' => 256, // fixed it
             'remove_spaces' => TRUE, // eliminate any spaces in the name
             'overwrite' => TRUE, // overwrite existing image
-        ];    
-        $this->load->library('upload', $config);    
-        if (!$this->upload->do_upload('replacement')) {        
-            $this->error_messages[] = $this->upload->display_errors();       
-            return NULL;    
-        } 
-        else        
+        ];
+        $this->load->library('upload', $config);
+        if (!$this->upload->do_upload('replacement')) {
+            $this->error_messages[] = $this->upload->display_errors();
+            return NULL;
+        }
+        else
             return $this->upload->data('file_name');}
 
 
